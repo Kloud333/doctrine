@@ -17,13 +17,13 @@ require_once "../bootstrap.php";
 
 <?php
 
-$productRepository = $entityManager->getRepository("app\src\Entity\Posts");
-$products = $productRepository->findAll();
+$postsRepository = $entityManager->getRepository("app\src\Entity\Posts");
+$posts = $postsRepository->findAll();
 
-foreach ($products as $product) {
-    echo 'Post: ' . $product->getId();
-    echo ' ' . $product->getTitle();
-    echo ' ' . $product->getBody();
+foreach ($posts as $post) {
+    echo 'Post: ' . $post->getId();
+    echo ' ' . $post->getTitle();
+    echo ' ' . $post->getBody();
     echo '</br>';
 }
 
