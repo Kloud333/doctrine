@@ -2,7 +2,9 @@
 
 namespace app\src\Entity;
 
-
+/**
+ * @Entity @Table(name="images")
+ **/
 class Images
 {
     /** @id @Column(type="integer") * */
