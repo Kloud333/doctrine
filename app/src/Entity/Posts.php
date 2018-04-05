@@ -16,6 +16,9 @@ class Posts
     /** @Column(type="string") * */
     protected $body;
 
+    /** @Column(type="integer")* */
+    protected $user_id;
+
     /**
      * @return mixed
      */
@@ -54,5 +57,21 @@ class Posts
     public function setBody($body): void
     {
         $this->body = $body;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * @param mixed $user_id
+     */
+    public function setUserId($user_id): void
+    {
+        $this->user_id = $user_id;
     }
 }
