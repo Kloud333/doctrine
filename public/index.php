@@ -17,15 +17,22 @@ require_once "../bootstrap.php";
 
 <?php
 
-$postsRepository = $entityManager->getRepository("app\src\Entity\Posts");
-$posts = $postsRepository->findAll();
+//$postsRepository = $entityManager->getRepository("app\src\Entity\Posts");
+//$posts = $postsRepository->findAll();
 
-foreach ($posts as $post) {
-    echo 'Post: ' . $post->getId();
-    echo ' ' . $post->getTitle();
-    echo ' ' . $post->getBody();
-    echo '</br>';
-}
+//foreach ($posts as $post) {
+//    echo 'Post: ' . $post->getId();
+//    echo ' ' . $post->getTitle();
+//    echo ' ' . $post->getBody();
+//    echo '</br>';
+//}
+
+$qb = $entityManager->createQueryBuilder();
+
+var_dump($qb->select('users')
+    ->from('app\src\Entity\Users','users')
+    ->getQuery()
+    ->execute());
 
 ?>
 
