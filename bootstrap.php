@@ -9,7 +9,7 @@ $isDevMode = true;
 $config = Setup::createAnnotationMetadataConfiguration(array(__DIR__ . "/src"), $isDevMode);
 
 $conn = array(
-    'dbname' => 'dtest',
+    'dbname' => 'test_doctr',
     'user' => 'root',
     'password' => '',
     'host' => 'localhost',
