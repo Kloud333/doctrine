@@ -7,17 +7,26 @@ namespace app\src\Entity;
  **/
 class Posts
 {
-    /** @id @Column(type="integer") @GeneratedValue * */
+    /** @id
+     * @Column(type="integer")
+     * @GeneratedValue
+     **/
     protected $id;
 
-    /** @Column(type="string") * */
+    /**
+     * @Column(type="string")
+     **/
     protected $title;
 
-    /** @Column(type="string") * */
+    /**
+     * @Column(type="string")
+     **/
     protected $body;
 
-    /** @Column(type="integer")* */
-    protected $user_id;
+    /**
+     * @ManyToOne(targetEntity="Users")
+     **/
+    protected $user;
 
     /**
      * @return mixed
@@ -62,16 +71,16 @@ class Posts
     /**
      * @return mixed
      */
-    public function getUserId()
+    public function getUser()
     {
-        return $this->user_id;
+        return $this->user;
     }
 
     /**
-     * @param mixed $user_id
+     * @param mixed $user
      */
-    public function setUserId($user_id): void
+    public function setUser(Users $user)
     {
-        $this->user_id = $user_id;
+        $this->user = $user;
     }
 }

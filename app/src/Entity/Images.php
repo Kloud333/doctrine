@@ -7,12 +7,51 @@ namespace app\src\Entity;
  **/
 class Images
 {
-    /** @id @Column(type="integer") * */
+    /** @id
+     * @Column(type="integer")
+     * @GeneratedValue
+     **/
     protected $id;
 
-    /** @Column(type="integer")* */
-    protected $user_id;
+    /**
+     * @ManyToOne(targetEntity="Users")
+     **/
+    protected $user;
 
-    /** @Column(type="string") * */
+    /**
+     * @Column(type="string")
+     **/
     protected $src;
+
+    /**
+     * @return mixed
+     */
+    public function getSrc()
+    {
+        return $this->src;
+    }
+
+    /**
+     * @param mixed $src
+     */
+    public function setSrc($src)
+    {
+        $this->src = $src;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser(Users $user)
+    {
+        $this->user = $user;
+    }
 }
