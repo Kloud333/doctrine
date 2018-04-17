@@ -3,7 +3,7 @@
 namespace app\src\Entity;
 
 /**
- * @Entity @Table(name="users")
+ * @Table(name="users",indexes={@Index(name="name", columns={"name"})})
  **/
 class Users
 {

@@ -3,7 +3,7 @@
 namespace app\src\Entity;
 
 /**
- * @Entity @Table(name="images")
+ * @Entity @Table(name="images",indexes={@Index(name="src", columns={"src"})})
  **/
 class Images
 {

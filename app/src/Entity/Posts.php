@@ -3,8 +3,8 @@
 namespace app\src\Entity;
 
 /**
- * @Entity @Table(name="posts")
- **/
+ * @Entity @Table(name="posts",indexes={@Index(name="title", columns={"title"})})
+ */
 class Posts
 {
     /** @id
