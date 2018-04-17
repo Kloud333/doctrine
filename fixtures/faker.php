@@ -8,9 +8,10 @@ use Faker\Factory;
 
 $faker = Factory::create();
 
-// TODO таймер
 
-for ($i = 1; $i < 10; $i++) {
+$start = microtime(true);
+
+for ($i = 1; $i < 1000; $i++) {
 
     $users = new Users();
     $users->setName($faker->name);
@@ -31,4 +32,5 @@ for ($i = 1; $i < 10; $i++) {
     $entityManager->flush();
 }
 
-// TODO таймер
+$time = microtime(true) - $start;
+printf('Скрипт выполнялся %.4F сек.', $time);
