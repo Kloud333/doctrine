@@ -8,6 +8,8 @@ use Faker\Factory;
 
 $faker = Factory::create();
 
+// TODO таймер
+
 for ($i = 1; $i < 10; $i++) {
 
     $users = new Users();
@@ -29,4 +31,4 @@ for ($i = 1; $i < 10; $i++) {
     $entityManager->flush();
 }
 
-
+// TODO таймер
