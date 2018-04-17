@@ -1,5 +1,7 @@
 <?php
 
+use app\src\Entity\Users;
+
 require_once "../bootstrap.php";
 
 ?>
@@ -30,7 +32,7 @@ require_once "../bootstrap.php";
 $qb = $entityManager->createQueryBuilder();
 
 var_dump($qb->select('users')
-    ->from('app\src\Entity\Users','users')
+    ->from(Users::class,'users')
     ->getQuery()
     ->execute());
 
